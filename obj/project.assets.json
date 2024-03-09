@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\avinash 2\\azure_batch7\\DMart\\DMart.csproj",
+      "projectUniqueName": "F:\\avinash_2\\azure_batch7\\DMart\\DMart.csproj",
       "projectName": "DMart",
-      "projectPath": "F:\\avinash 2\\azure_batch7\\DMart\\DMart.csproj",
+      "projectPath": "F:\\avinash_2\\azure_batch7\\DMart\\DMart.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "F:\\avinash 2\\azure_batch7\\DMart\\obj\\",
+      "outputPath": "F:\\avinash_2\\azure_batch7\\DMart\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config"
