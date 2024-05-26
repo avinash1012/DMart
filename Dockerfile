@@ -1,30 +1,31 @@
-# Use the official .NET SDK image to build the app
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+# Use the official .NET Core SDK image to build the application
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
-# Set the working directory
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the .csproj file and restore the dependencies
+# Copy the .csproj file and restore any dependencies
 COPY *.csproj ./
 RUN dotnet restore
 
-# Copy the rest of the application files
+# Copy the rest of the application files and build the application
 COPY . ./
-
-# Build the application
 RUN dotnet publish -c Release -o out
 
-# Use the official ASP.NET Core runtime image to run the app
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
+# Use the official .NET runtime image to run the application
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 
-# Set the working directory
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the built application from the build stage
+# Copy the build output from the build stage to the runtime stage
 COPY --from=build /app/out .
 
-# Expose the port the app runs on
+# Expose port 80
 EXPOSE 80
 
-# Set the entry point for the container
-ENTRYPOINT ["dotnet", "dmart.dll"]
+# Set the ASP.NET Core URL environment variable to listen on port 80
+ENV ASPNETCORE_URLS=http://+:80
+
+# Specify the entry point for the application
+ENTRYPOINT ["dotnet", "DMart.dll"]
