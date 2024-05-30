@@ -1,6 +1,6 @@
 {
     "auths": {
-      "retailstore2.azurecr.io": {
+      "dotnetvm1.azurecr.io": {
         "username": "dotnetvm1",
         "password": "bS9Kdkk2U2lsNG4zck04UG1mRkxXZmtPbk5WUXMvRWZSTEhqM0oyMnl5K0FDUkJQWnNWQg==",
         "email": "avinash970581@gmail.com"
